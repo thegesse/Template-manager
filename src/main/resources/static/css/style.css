@@ -1,0 +1,144 @@
+body {
+    background-color: #B7B1F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+#add {
+    background: #FDB7EA;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 95%;
+    min-width: 1400px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#codeDescription {
+    background: lavenderblush;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#codeDescription::placeholder {
+    color: black; /* A darker pink so it's readable on white */
+    opacity: 0.7;   /* Makes it look slightly faded */
+}
+
+
+#codePaste {
+    background: lavenderblush;
+    width: 100%;
+    min-height: 400px;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: monospace;
+}
+
+#codePaste::placeholder {
+    color: black;
+    font-size: 20px;
+}
+
+#add button {
+    background: lavenderblush;
+    font-size: 25px;
+    padding: 5px 10vw; /* First number is Top/Bottom, second is Left/Right */
+    width: auto;       /* Makes it only as wide as the word "enter" */
+    align-self: center;
+}
+
+#List {
+    display: grid;
+    /* This creates as many columns as will fit, each at least 300px wide */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;          /* Space between the blocks */
+    width: 95%;
+    max-width: 1400px;  /* Matches your form width */
+    margin: 20px auto;  /* Centers the list */
+    padding: 0;
+}
+
+.template-item {
+    background: #FDB7EA;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Stacks description, code, and buttons vertically */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    height: 400px; /* Gives all blocks a uniform height */
+}
+
+.code-desc {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Cuts off long titles with "..." */
+}
+
+.code {
+    flex-grow: 1;       /* Makes the code area fill the available space */
+    background: #282c34;
+    color: #abb2bf;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    overflow: auto;     /* Adds scrollbars inside the block if code is long */
+    margin-bottom: 10px;
+}
+
+.template-item button {
+    /* Make the text larger */
+    font-size: 18px;
+    font-weight: bold;
+
+    /* Increase the hit area (size of the box) */
+    padding: 12px 20px;
+
+    /* Aesthetic touch-ups */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s;
+
+    /* Layout */
+    width: 100%;       /* Makes buttons full-width of the block */
+    margin-top: 8px;   /* Space between buttons */
+}
+
+/* Specific colors for clarity */
+.copy-btn {
+    background-color: #F0FFDF; /* Green */
+    color: black;
+}
+
+.delete-btn {
+    background-color: #FFDCCC; /* Red */
+    color: black;
+}
+
+/* Add a slight 'pop' when hovering */
+.template-item button:hover {
+    filter: brightness(90%);
+    transform: scale(1.02); /* Makes it slightly bigger when you hover */
+}
+
+/* Feedback for when the button is clicked */
+.template-item button:active {
+    transform: scale(0.98);
+}
